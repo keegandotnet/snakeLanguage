@@ -1,1 +1,50 @@
+///functions.py
 
+def print_teams(teams):
+    '''
+    Print the values in the dictionary
+    @param: teams: the dictionary 
+    '''
+    for value in teams.values():
+        print(value)
+
+///main.py
+
+from functionsPackage.functions import *
+
+if __name__ == "__main__":
+
+  # Big 10 Schools - Duplicate keys considering UCLA and USC are both in Los Angeles.
+  myTeams = {
+      'Columbus': 'Ohio State','Bloomington': 'Indiana','West Lafayette': 'Purdue','Iowa City': 'Iowa','Evanston': 'Northwestern','State College': 'Penn State','Madison': 'Wisconsin','Minneapolis': 'Minnesota','New Brunswick': 'Rutgers','Lincoln': 'Nebraska','Ann Arbor': 'Michigan','East Lansing': 'Michigan State','Los Angeles': 'USC','Los Angeles': 'UCLA','Eugene': 'Oregon','Seattle': 'Washington'
+  }
+  
+  #3. Call print_teams, passing myTeams as the argument.
+  print_teams(myTeams)
+ 
+  #4. Write one line of code to sort myTeams values into a list called myTeamsList. 
+  myTeamsList = sorted(myTeams.values())
+ 
+  #5a. Call the print_teams function and pass
+  #5b. Add error handling to main.py so the program doesn’t crash anymore.
+  try:
+      print_teams(myTeamsList)
+  except:
+      print("An error occurred")
+ 
+  #6. Write an input statement that prompts for the name of a Big 10 school and stores the user input in avariable called inputSchool. 
+  inputSchool = input("Enter the name of a Big 10 school: ")
+
+  #7. Write an if/else statement that looks for inputSchool in myTeamsList. 
+  if inputSchool in myTeamsList:
+      print(f"{inputSchool} is a Big 10 school.")
+  else:
+      print(f"{inputSchool} is not a Big 10 school.")
+  
+  #8. Repeat steps 5/6 and produce a failed test.
+  inputSchool = input("Enter the name of a Big 10 school: ")
+  if inputSchool in myTeamsList:
+      print(f"{inputSchool} is a Big 10 school.")
+  else:
+      print(f"{inputSchool} is not a Big 10 school.")
+  
