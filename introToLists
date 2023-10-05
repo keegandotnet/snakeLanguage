@@ -1,0 +1,37 @@
+def print_teams(teamList):
+    '''
+    Print the elements in the list
+    :param teamList: The list
+    '''
+#1. Finish function.
+    for item in teamList:
+        print(item)
+
+#2. Big 10 Schools
+teams = [
+    'Ohio State', 'Indiana', 'Purdue', 'Iowa', 'Northwestern', 'Penn State',
+        'Wisconsin', 'Minnesota', 'Rutgers', 'Nebraska', 'Michigan', 'Michigan State'
+]
+
+#3. Sort teams alphabetically.
+teams.sort()
+
+#4. Call the function to print the sorted teams
+print("Sorted list...")
+print_teams(teams)
+
+#5. Input statement stored as inputTeam.
+inputTeam = input("Enter a school name to see if it is in the Big 10: ")
+
+#6. Check if the inputTeam is in the teams list & return error message if not.
+if inputTeam in teams:
+    print("That school," f" {inputTeam} is in the Big 10!")
+else:
+    print("That school," f" {inputTeam} is NOT in the Big 10.")
+    
+#8. Duplicate 5&6 and perform a different test.
+inputTeam = input("Enter another school name to see if it is in the Big 10: ")
+if inputTeam in teams:
+    print("That school," f" {inputTeam} is in the Big 10!")
+else:
+    print("That school," f" {inputTeam} is NOT in the Big 10.")
