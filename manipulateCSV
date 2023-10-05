@@ -1,0 +1,36 @@
+# Name: Keegan Smith
+# email: smith6kg@mail.uc.edu
+# Assignment Title: Assignment 05
+# Due Date: 09/28/2023
+# Course: IS 4010
+# Semester/Year: Fall 2023
+# Brief Description: This project demonstrates that I can use Python to work with dictionaries.
+# Citations: N/A
+# Anything else that's relevant: N/A
+
+from functionsPackage.functions import read_CSV_file
+
+if __name__ == "__main__":
+    # print("data:", data)
+
+# brute force a loop to pull a column from the CSV.
+    max_value = float('-inf')  # Initialize max_value with negative infinity
+    csv_data = read_CSV_file("Obesity_among_children_and_adolescents_aged_2_19_years__by_selected_characteristics__United_States.csv")
+
+for row in csv_data:
+    column_value = float(row[10])  # converting the column value to a float (numeric) so that we can find a max. Why float instead of int? Because.
+    if column_value > max_value: # read through the rows, converting values of next row into numbers. If column_value is bigger than current max, replace max_value.
+        max_value = column_value
+
+print("Maximum value in the ninth column:", max_value)
+
+# using list comprehension like god intended:
+max_value = max(float(row[10]) for row in csv_data)
+print("Maximum value in the ninth column (using list comprehension):", max_value)
+
+# pull unique values from a column and display the first 5.
+unique_values = set(row[5] for row in csv_data)
+# print the count of unique values:
+print("Count of unique values in the fourth column:", len(unique_values))
+# print the first five.
+print("First 5 unique values in the fourth column:", list(unique_values)[:5])
